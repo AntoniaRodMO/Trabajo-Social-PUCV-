@@ -15,8 +15,8 @@ const malla = {
     { nombre: "Introducción al Pensamiento Filosófico", creditos: 3 },
     { nombre: "Inglés 1", creditos: 2 },
     { nombre: "Formación Fundamental 1", creditos: 3 }
-  ],
-  // Puedes agregar los demás semestres aquí...
+  ]
+  // Puedes continuar agregando más semestres aquí...
 };
 
 function crearMalla() {
@@ -37,13 +37,14 @@ function crearMalla() {
 
       const detalle = document.createElement("div");
       detalle.className = "detalle";
-      detalle.textContent = 
-        (ramo.creditos ? `Créditos: ${ramo.creditos}` : "") + 
+      detalle.textContent =
+        (ramo.creditos ? `Créditos: ${ramo.creditos}` : "") +
         (ramo.requisito ? ` | Requisito: ${ramo.requisito}` : "");
 
       divRamo.appendChild(detalle);
+
       divRamo.onclick = () => {
-        detalle.style.display = (detalle.style.display === 'block') ? 'none' : 'block';
+        detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
       };
 
       divSemestre.appendChild(divRamo);
@@ -53,7 +54,4 @@ function crearMalla() {
   }
 }
 
-// Ejecutar cuando el DOM esté listo
-document.addEventListener("DOMContentLoaded", () => {
-  crearMalla();
-});
+document.addEventListener("DOMContentLoaded", crearMalla);
